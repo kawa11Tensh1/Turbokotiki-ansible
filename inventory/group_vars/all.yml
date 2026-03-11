@@ -1,0 +1,6 @@
+project_dir: /home/root/turbokotiki
+repo_url: https://github.com/kawa11Tensh1/Turbokotiki.git
+repo_branch: main
+container_name: turbokotiki-site
+docker_compose_command: docker compose
+app_port: 8080

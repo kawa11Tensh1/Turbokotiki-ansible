@@ -1,0 +1,15 @@
+galaxy_info:
+  author: Vlada Borisova
+  role_name: update
+  description: Update Turbokotiki website using Docker
+  min_ansible_version: 2.12
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+
+dependencies: []

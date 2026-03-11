@@ -1,0 +1,31 @@
+---
+- name: Check Docker installed
+  command: docker --version
+  register: docker_check
+  changed_when: false
+  failed_when: docker_check.rc != 0
+
+- name: Check Git installed
+  command: git --version
+  register: git_check
+  changed_when: false
+  failed_when: git_check.rc != 0
+
+- name: Create project directory
+  file:
+    path: "{{ project_dir }}"
+    state: directory
+    mode: "0755"
+
+- name: Clone or update repository
+  git:
+    repo: "{{ repo_url }}"
+    dest: "{{ project_dir }}"
+    version: "{{ repo_branch }}"
+    force: yes
+  notify: restart containers
+
+- name: Start containers
+  command: "{{ docker_compose_command }} up -d"
+  args:
+    chdir: "{{ project_dir }}"

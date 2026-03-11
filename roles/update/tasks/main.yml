@@ -1,0 +1,10 @@
+---
+- name: Pull latest changes from repository
+  git:
+    repo: "{{ repo_url }}"
+    dest: "{{ project_dir }}"
+    version: "{{ repo_branch }}"
+    force: yes
+    update: yes
+  register: git_update_result
+  changed_when: git_update_result.before != git_update_result.after

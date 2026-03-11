@@ -1,0 +1,6 @@
+---
+- name: Delpoy Turbokotiki
+  hosts: turbokotiki
+  gather_facts: true
+  roles:
+    - role: deploy
