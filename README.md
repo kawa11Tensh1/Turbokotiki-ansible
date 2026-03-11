@@ -98,7 +98,7 @@ inventory/hosts.ini
 
 ```
 [turbokotiki]
-server ansible_host=IP_СЕРВЕРА ansible_user=root ansible_ssh_pass=password
+server ansible_host=212.109.197.205 ansible_user=root ansible_ssh_pass=password
 ```
 
 ---
@@ -181,7 +181,7 @@ ansible-playbook playbooks/update.yml
 После успешного деплоя сайт будет доступен по адресу:
 
 ```
-http://IP_СЕРВЕРА:8080
+http://212.109.197.205:8080
 ```
 
 ---
@@ -198,5 +198,4 @@ http://IP_СЕРВЕРА:8080
 
 # Автор
 
-Борисова Влада  
-Команда Turbokotiki
+Борисова Влада
